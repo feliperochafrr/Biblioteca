@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="6" cellpadding="5">  
+                <p:dataTable id="tabela" value="#{emprestimoMB.findAll()}" var="emprestimo">
+                    <p:column  headerText="ID" >  
+                        <h:outputLabel value="#{emprestimo.id}"/>
+                    </p:column>
+                    <p:column headerText="Livro" >
+                        <h:outputLabel value="#{emprestimo.livro}"/>
+                    </p:column>
+                    <p:column headerText="Data Emprestimo" >
+                        <h:outputLabel value="#{emprestimo.dataInicio}"/>
+                    </p:column>
+                    <p:column headerText="Data da Devolução" >
+                        <h:outputLabel value="#{emprestimo.dataDevolucao}"/>
+                    </p:column>
+                    <p:column>
+                        <p:commandButton value="Apagar" action="#{emprestimoMB.apagar(emprestimo)}" ajax="false"/>
+                        <p:commandButton value="Editar" action="#{emprestimoMB.editar(emprestimo)}" ajax="false"/>
+                        
+                    </p:column>
+                    
+                </p:dataTable>
+            </h:panelGrid>
+            <h:commandLink value="Voltar" action="CadastraEmprestimo"/>
+        </h:form>
+    </h:body>
+</html>
+
