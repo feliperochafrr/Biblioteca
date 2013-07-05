@@ -9,15 +9,15 @@
     <h:body>
         <h:form>
             <h:panelGrid columns="1" cellpadding="2" >
+                
             <p:column>
             <h:outputLabel value="Data Empréstimo: "/>
-
-            <p:inputText value="#{emprestimoMB.emprestimo.dataInicio}"/>
+            <p:inputMask value="#{emprestimoMB.emprestimo.dataInicio}" mask="99/99/9999"/>
             </p:column>
+                
             <p:column>
             <h:outputLabel value="Data da Devolução: "/>
-
-            <p:inputText value="#{emprestimoMB.emprestimo.dataDevolucao}"/>
+            <p:inputMask value="#{emprestimoMB.emprestimo.dataDevolucao}" mask="99/99/9999"/>
             </p:column>
                 
             <br/>
